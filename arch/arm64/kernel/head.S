@@ -117,6 +117,8 @@ pe_header:
 	 *                                        current RELR displacement
 	 */
 ENTRY(stext)
+__TEST_LOOP:
+	b __TEST_LOOP
 	bl	preserve_boot_args
 	bl	el2_setup			// Drop to EL1, w0=cpu_boot_mode
 	adrp	x23, __PHYS_OFFSET
